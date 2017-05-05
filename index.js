@@ -11,6 +11,10 @@ mongoose.connect('mongodb://localhost/teams');
 mongoose.Promise = global.Promise;
 
 
+// === SET public files
+app.use(express.static('public'));
+
+
 // === USE body-parser JSON Format
 app.use(bodyParser.json());
 

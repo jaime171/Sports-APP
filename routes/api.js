@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Team = require('../models/team');
 
+
 // === GET the list from DB
 router.get('/sports', function(req, res, next){
 
@@ -43,10 +44,16 @@ router.delete('/sports/:id', function(req, res, next){
 router.put('/sports/:id', function(req, res, next){
 
     Team
-        .findByIdAndUpdate({_id: req.params.id}, req.body)
+        .findByIdAndUpdate({ _id: req.params.id }, req.body)
         .then(function(team) {
 
-            res.send(team);
+            Team
+                .findOne({ _id: req.params.id })
+                .then(function (team) {
+
+                    res.send(team);
+
+                });
 
         });
 
