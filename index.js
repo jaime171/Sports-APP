@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 const templateRouter = require('./routes/templates');
 const apiRouter = require('./routes/api');
 
+// === GET Error handler
+const errorHandler = require('./errors/errors');
+
 // === Set up express app
 const app = express();
 
@@ -32,8 +35,8 @@ app.use('/', templateRouter);
  ======================== */
 
 
-/*// === SET public files
-app.use(express.static('public'));*/
+// === SET public files
+app.use(express.static('public'));
 
 // === USE body-parser JSON Format
 app.use(bodyParser.json());
@@ -44,9 +47,7 @@ app.use('/api', apiRouter);
 // === ERROR handling
 app.use(function (err, req, res, next){
 
-    res.status(422).send({
-        error: err.message
-    });
+    errorHandler(err, req, res, next);
 
 });
 
