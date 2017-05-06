@@ -1,5 +1,8 @@
+body {
+  background: red;
+  background: black; }
+
 h1 {
-    color: lightcoral;
-    text-align: center;
-    font-family: "Helvetica";
-}
+  color: lightcoral;
+  text-align: center;
+  font-family: "Helvetica"; }

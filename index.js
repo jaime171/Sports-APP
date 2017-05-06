@@ -12,7 +12,6 @@ const errorHandler = require('./errors/errors');
 // === Set up express app
 const app = express();
 
-
 // === CONNECT to MONGODB
 mongoose.connect('mongodb://localhost/teams');
 mongoose.Promise = global.Promise;
