@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// === Routers
+const templateRouter = require('./routes/templates');
+const apiRouter = require('./routes/api');
+
 // === Set up express app
 const app = express();
 
@@ -11,17 +15,31 @@ mongoose.connect('mongodb://localhost/teams');
 mongoose.Promise = global.Promise;
 
 
-// === SET public files
-app.use(express.static('public'));
+/* ====================
+Jade Template Engine Setup
+======================== */
 
+
+// === INITIALIZE pug engine
+app.set('view engine', 'pug');
+
+// === GET templates routes
+app.use('/', templateRouter);
+
+
+/* ====================
+       Middlewares
+ ======================== */
+
+
+/*// === SET public files
+app.use(express.static('public'));*/
 
 // === USE body-parser JSON Format
 app.use(bodyParser.json());
 
-
-// === INITIALIZE routes
-app.use('/api', require('./routes/api'));
-
+// === INITIALIZE API routes
+app.use('/api', apiRouter);
 
 // === ERROR handling
 app.use(function (err, req, res, next){
@@ -31,6 +49,11 @@ app.use(function (err, req, res, next){
     });
 
 });
+
+
+/* ====================
+ Server
+ ======================== */
 
 
 // === Listen for request
