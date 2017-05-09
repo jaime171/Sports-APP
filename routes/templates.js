@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 var Model = {
-    Title: 'Hey',
-    Message: 'Hello asshole'
+    Title: 'Dashboard',
+    Message: 'API Dashboard'
 };
 
 // === Set PUG Route

@@ -17,11 +17,9 @@ const SOURCE_PATH = './';
 
 gulp.task('styles', styles);
 
-gulp.task('lint', scripts);
-
 gulp.task('watcher', watcher);
 
-gulp.task('default', ['styles', 'lint', 'watcher']);
+gulp.task('default', ['styles', 'watcher']);
 
 
 /* ====================
@@ -30,22 +28,22 @@ gulp.task('default', ['styles', 'lint', 'watcher']);
 
 function watcher() {
 
-    gulp.watch(SOURCE_PATH + 'styles/*.{sass, scss}', {cwd: SOURCE_PATH}, ['styles']);
+    gulp.watch(SOURCE_PATH + 'styles/**/*.{sass, scss}', {cwd: SOURCE_PATH}, ['styles']);
 
-    gulp.watch(SOURCE_PATH + 'scripts/main.js', {cwd: SOURCE_PATH}, ['lint']);
+    //gulp.watch(SOURCE_PATH + 'scripts/main.js', {cwd: SOURCE_PATH}, ['lint']);
 
     //gulp.watch('app/pug/*.pug', {cwd: src}, ['views']);
 
 }
 
-function scripts() {
-
-    return gulp.src(SOURCE_PATH + 'scripts/main.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        .pipe(gulp.dest(SOURCE_PATH + 'public/scripts'));
-
-}
+// function scripts() {
+//
+//     return gulp.src(SOURCE_PATH + 'scripts/main.js')
+//         .pipe(jshint())
+//         .pipe(jshint.reporter('default'))
+//         .pipe(gulp.dest(SOURCE_PATH + 'public/scripts'));
+//
+// }
 
 function styles() {
 
