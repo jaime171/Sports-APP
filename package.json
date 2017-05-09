@@ -13,7 +13,6 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.7",
-    "normalize.css": "^7.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },

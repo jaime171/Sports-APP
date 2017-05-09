@@ -4,10 +4,11 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 const labels = {
-    title: 'Login',
-    username: 'username',
-    password: 'password',
-    submit: 'submit'
+    title: 'Member Login',
+    username: 'Username',
+    password: 'Password',
+    submit: 'Submit',
+    newUser: 'New User?'
 };
 
 // === CREATE component
@@ -15,18 +16,17 @@ class SignInComponent extends React.Component {
 
     render() {
 
-        const {title, username, password, submit} = this.props.labels;
+        const {title, username, password, submit, newUser} = this.props.labels;
 
         return(
-            <div id="login-form">
-                <h3> { title } </h3>
-                <form>
-                    <label> { username } </label>
-                    <input type="text"/>
-                    <label> { password } </label>
-                    <input type="text"/>
-                    <input type="submit" value={ submit }/>
+            <div className='login-form center-text'>
+                <h2> { title } </h2>
+                <form className='center-block'>
+                    <input type='text' placeholder={ username }/>
+                    <input type='password' placeholder={ password }/>
+                    <input className='pointer' type='submit' value={ submit }/>
                 </form>
+                <a href='#' className='center-block'> { newUser } </a>
             </div>
         );
 

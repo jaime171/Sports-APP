@@ -85,10 +85,11 @@ var React = __webpack_require__(1);
 var ReactDOM = __webpack_require__(2);
 
 var labels = {
-    title: 'Login',
-    username: 'username',
-    password: 'password',
-    submit: 'submit'
+    title: 'Member Login',
+    username: 'Username',
+    password: 'Password',
+    submit: 'Submit',
+    newUser: 'New User?'
 };
 
 // === CREATE component
@@ -109,14 +110,15 @@ var SignInComponent = function (_React$Component) {
                 title = _props$labels.title,
                 username = _props$labels.username,
                 password = _props$labels.password,
-                submit = _props$labels.submit;
+                submit = _props$labels.submit,
+                newUser = _props$labels.newUser;
 
 
             return React.createElement(
                 'div',
-                { id: 'login-form' },
+                { className: 'login-form center-text' },
                 React.createElement(
-                    'h3',
+                    'h2',
                     null,
                     ' ',
                     title,
@@ -124,24 +126,17 @@ var SignInComponent = function (_React$Component) {
                 ),
                 React.createElement(
                     'form',
-                    null,
-                    React.createElement(
-                        'label',
-                        null,
-                        ' ',
-                        username,
-                        ' '
-                    ),
-                    React.createElement('input', { type: 'text' }),
-                    React.createElement(
-                        'label',
-                        null,
-                        ' ',
-                        password,
-                        ' '
-                    ),
-                    React.createElement('input', { type: 'text' }),
-                    React.createElement('input', { type: 'submit', value: submit })
+                    { className: 'center-block' },
+                    React.createElement('input', { type: 'text', placeholder: username }),
+                    React.createElement('input', { type: 'password', placeholder: password }),
+                    React.createElement('input', { className: 'pointer', type: 'submit', value: submit })
+                ),
+                React.createElement(
+                    'a',
+                    { href: '#', className: 'center-block' },
+                    ' ',
+                    newUser,
+                    ' '
                 )
             );
         }
