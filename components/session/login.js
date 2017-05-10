@@ -24,9 +24,9 @@ class SignInComponent extends React.Component {
                 <form className='center-block'>
                     <input type='text' placeholder={ username }/>
                     <input type='password' placeholder={ password }/>
-                    <input className='pointer' type='submit' value={ submit }/>
+                    <input className='pointer btn' type='submit' value={ submit }/>
                 </form>
-                <a href='#' className='center-block'> { newUser } </a>
+                <a href='/signup' className='center-block'> { newUser } </a>
             </div>
         );
 

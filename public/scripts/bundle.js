@@ -129,11 +129,11 @@ var SignInComponent = function (_React$Component) {
                     { className: 'center-block' },
                     React.createElement('input', { type: 'text', placeholder: username }),
                     React.createElement('input', { type: 'password', placeholder: password }),
-                    React.createElement('input', { className: 'pointer', type: 'submit', value: submit })
+                    React.createElement('input', { className: 'pointer btn', type: 'submit', value: submit })
                 ),
                 React.createElement(
                     'a',
-                    { href: '#', className: 'center-block' },
+                    { href: '/signup', className: 'center-block' },
                     ' ',
                     newUser,
                     ' '

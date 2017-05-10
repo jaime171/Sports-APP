@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        path.resolve(__dirname, 'components') + '/common/login'
+        path.resolve(__dirname, 'components') + '/session/login'
     ],
     output: {
         path: path.resolve(__dirname, 'public') + '/scripts',

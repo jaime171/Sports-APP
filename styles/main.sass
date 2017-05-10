@@ -1,16 +1,22 @@
 
-// === Helpers
-@import "helpers"
-
 // === Variables
 @import "variables"
 
+// === Helpers
+@import "helpers"
+
 // === Common components
-@import "common/login"
+@import "session/login"
+
+// === Partials
+@import "partials/home"
 
 body, html, input
   color: $font-color
   -webkit-font-smoothing: antialiased
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 
 .wrapper
   background-color: $bg-color
