@@ -9,7 +9,15 @@ export class HomeModule extends React.Component {
 
         return(
 
-            <h1>Home</h1>
+            <section id='home' className='center-block session-module'>
+                <div className='home' >
+                    <h2 className='center-text'>Sports Dashboard</h2>
+                    <div className='btn-container'>
+                        <a href='/login' className='pointer home-btn btn'> Login </a>
+                        <a href='/register' className='pointer home-btn btn'> Register </a>
+                    </div>
+                </div>
+            </section>
 
         );
 

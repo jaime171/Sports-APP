@@ -21,9 +21,9 @@ router.get('/login', function (req, res) {
 });
 
 
-router.get('/signup', function (req, res) {
+router.get('/register', function (req, res) {
 
-    res.render('session/signup');
+    res.render('session/register');
 
 });
 

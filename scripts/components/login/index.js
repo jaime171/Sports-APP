@@ -9,11 +9,11 @@ class LogInModule extends React.Component {
 
         return (
 
-            <section id='login-form' className='center-block'>
+            <section id='login-form' className='center-block session-module'>
                 <div className='login-form center-text'>
                     <h2> Member Login </h2>
                     <LogIn />
-                    <a href='/signup' className='center-block'>New User?</a>
+                    <a href='/register' className='center-block'>New User?</a>
                 </div>
             </section>
 
@@ -30,7 +30,7 @@ class Title extends React.Component {
 
         return (
 
-           <h1>chingo putittos</h1>
+           <h1>Second Component</h1>
 
         )
 

@@ -1412,9 +1412,11 @@ var _reactDom = __webpack_require__(51);
 
 var _reactRouterDom = __webpack_require__(38);
 
-var _index = __webpack_require__(19);
+var _index = __webpack_require__(53);
 
-var _index2 = __webpack_require__(53);
+var _index2 = __webpack_require__(19);
+
+var _index3 = __webpack_require__(56);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1446,8 +1448,9 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _index2.HomeModule }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _index.LogInModule })
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _index.HomeModule }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _index2.LogInModule }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/register', component: _index3.RegisterModule })
                 )
             );
         }
@@ -1501,7 +1504,7 @@ var LogInModule = function (_React$Component) {
 
             return _react2.default.createElement(
                 'section',
-                { id: 'login-form', className: 'center-block' },
+                { id: 'login-form', className: 'center-block session-module' },
                 _react2.default.createElement(
                     'div',
                     { className: 'login-form center-text' },
@@ -1513,7 +1516,7 @@ var LogInModule = function (_React$Component) {
                     _react2.default.createElement(_login.LogIn, null),
                     _react2.default.createElement(
                         'a',
-                        { href: '/signup', className: 'center-block' },
+                        { href: '/register', className: 'center-block' },
                         'New User?'
                     )
                 )
@@ -1540,7 +1543,7 @@ var Title = function (_React$Component2) {
             return _react2.default.createElement(
                 'h1',
                 null,
-                'chingo putittos'
+                'Second Component'
             );
         }
     }]);
@@ -4600,14 +4603,204 @@ var HomeModule = exports.HomeModule = function (_React$Component) {
         value: function render() {
 
             return _react2.default.createElement(
-                'h1',
-                null,
-                'Home'
+                'section',
+                { id: 'home', className: 'center-block session-module' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'home' },
+                    _react2.default.createElement(
+                        'h2',
+                        { className: 'center-text' },
+                        'Sports Dashboard'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'btn-container' },
+                        _react2.default.createElement(
+                            'a',
+                            { href: '/login', className: 'pointer home-btn btn' },
+                            ' Login '
+                        ),
+                        _react2.default.createElement(
+                            'a',
+                            { href: '/register', className: 'pointer home-btn btn' },
+                            ' Register '
+                        )
+                    )
+                )
             );
         }
     }]);
 
     return HomeModule;
+}(_react2.default.Component);
+
+/***/ }),
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.RegisterModule = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _register = __webpack_require__(58);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RegisterModule = function (_React$Component) {
+    _inherits(RegisterModule, _React$Component);
+
+    function RegisterModule() {
+        _classCallCheck(this, RegisterModule);
+
+        return _possibleConstructorReturn(this, (RegisterModule.__proto__ || Object.getPrototypeOf(RegisterModule)).apply(this, arguments));
+    }
+
+    _createClass(RegisterModule, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'section',
+                { id: 'register-form', className: 'center-block session-module' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'register-form center-text' },
+                    _react2.default.createElement(
+                        'h2',
+                        null,
+                        ' Member Register '
+                    ),
+                    _react2.default.createElement(_register.Register, null),
+                    _react2.default.createElement(
+                        'a',
+                        { href: '/login', className: 'center-block' },
+                        'Log In'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return RegisterModule;
+}(_react2.default.Component);
+
+var Title = function (_React$Component2) {
+    _inherits(Title, _React$Component2);
+
+    function Title() {
+        _classCallCheck(this, Title);
+
+        return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
+    }
+
+    _createClass(Title, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'h1',
+                null,
+                'Second Component'
+            );
+        }
+    }]);
+
+    return Title;
+}(_react2.default.Component);
+
+exports.RegisterModule = RegisterModule;
+
+/***/ }),
+/* 57 */,
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Register = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Register = exports.Register = function (_React$Component) {
+    _inherits(Register, _React$Component);
+
+    function Register() {
+        _classCallCheck(this, Register);
+
+        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+    }
+
+    _createClass(Register, [{
+        key: 'render',
+        value: function render() {
+
+            var labels = {
+                username: 'Username',
+                password: 'Password',
+                passwordConfirm: 'Confirm Password',
+                mail: 'Email',
+                submit: 'Submit'
+            };
+
+            var username = labels.username,
+                password = labels.password,
+                passwordConfirm = labels.passwordConfirm,
+                mail = labels.mail,
+                submit = labels.submit;
+
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'form',
+                    { className: 'center-block' },
+                    _react2.default.createElement('input', { type: 'text', placeholder: username }),
+                    _react2.default.createElement('input', { type: 'password', placeholder: password }),
+                    _react2.default.createElement('input', { type: 'password', placeholder: passwordConfirm }),
+                    _react2.default.createElement('input', { type: 'mail', placeholder: mail }),
+                    _react2.default.createElement('input', { className: 'pointer btn', type: 'submit', value: submit })
+                )
+            );
+        }
+    }]);
+
+    return Register;
 }(_react2.default.Component);
 
 /***/ })

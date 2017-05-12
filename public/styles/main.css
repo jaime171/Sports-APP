@@ -12,7 +12,7 @@
 
 .btn {
   color: #333333;
-  background-color: #4591fb;
+  background-color: #4591fb !important;
   text-transform: uppercase;
   letter-spacing: .02em;
   box-shadow: 0px 4px 0 #3e82e1;
@@ -23,15 +23,41 @@
   line-height: 38px;
   margin: 25px 0; }
 
-#login-form {
+.home-btn {
+  background-color: #f5683d !important;
+  color: white !important;
+  box-shadow: 0px 4px 0 #f75523 !important; }
+
+.session-module {
   background-color: white;
   width: 100%;
   max-width: 340px;
   border-radius: 5px;
   position: relative;
-  top: 100px;
+  top: 120px;
   font-family: "Open Sans", sans-serif; }
-  #login-form .login-form::before {
+  .session-module h2 {
+    padding: 50px 0 0 0;
+    font-weight: lighter;
+    font-size: 2em; }
+  .session-module form {
+    width: 100%;
+    max-width: 270px; }
+  .session-module input {
+    display: block;
+    margin: 0 0 20px 0;
+    border: 0;
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #d3d3d3;
+    font-weight: bold; }
+  .session-module .btn-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; }
+  .session-module::before {
     content: url(/img/login-icon.svg);
     position: absolute;
     width: 29px;
@@ -43,46 +69,21 @@
     margin-left: -50px;
     z-index: 1;
     background-color: #ffd200; }
-  #login-form form {
-    width: 100%;
-    max-width: 270px; }
-  #login-form h2 {
-    padding: 80px 0 0 0;
-    font-weight: lighter;
-    font-size: 2em; }
-  #login-form a {
-    color: #f5683d;
-    display: inline-block;
-    padding: 10px 0 30px 0;
-    font-size: .95em; }
-
-input {
-  display: block;
-  margin: 0 0 20px 0;
-  border: 0;
-  width: 100%;
-  height: 38px;
-  border-radius: 4px;
-  text-align: center;
-  background-color: #d3d3d3;
-  font-weight: bold; }
 
 @media screen and (min-width: 46.875em) {
-  #login-form {
+  .session-module {
     top: 50%;
     left: 50%;
     margin-left: -170px;
-    margin-top: -220px;
     position: absolute; }
-    #login-form::after {
+    .session-module::after {
       content: '';
       display: block;
-      width: 120%;
-      height: 502px;
       position: absolute;
-      top: 72px;
-      left: 115px;
-      z-index: -1;
+      width: 26%;
+      height: 98px;
+      top: -25px;
+      left: 152px;
       -webkit-transform: rotate(42deg);
       -moz-transform: rotate(42deg);
       -ms-transform: rotate(42deg);
@@ -93,15 +94,50 @@ input {
       background: -webkit-linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent);
       background: -moz-linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent);
       background: -o-linear-gradient(100deg, black, transparent);
-      background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent); }
-  .login-form::after {
+      background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent); } }
+
+@media screen and (min-width: 46.875em) {
+  #home {
+    margin-top: -220px; }
+  .home::after {
+    z-index: -1;
     content: '';
     display: block;
-    width: 26%;
-    height: 98px;
     position: absolute;
-    top: -25px;
-    left: 152px;
+    width: 120%;
+    height: 429px;
+    top: 79px;
+    left: 92px;
+    -webkit-transform: rotate(52deg);
+    -moz-transform: rotate(52deg);
+    -ms-transform: rotate(52deg);
+    -o-transform: rotate(52deg);
+    transform: rotate(52deg);
+    /*linear-gradient*/
+    background: -webkit-gradient(linear, 60.06% 107.04%, 39.94% -7.04%, from(rgba(0, 0, 0, 0.2)), to(transparent));
+    background: -webkit-linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent);
+    background: -moz-linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent);
+    background: -o-linear-gradient(100deg, black, transparent);
+    background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent); } }
+
+#login-form a {
+  color: #f5683d;
+  display: inline-block;
+  padding: 10px 0 30px 0;
+  font-size: .95em; }
+
+@media screen and (min-width: 46.875em) {
+  #login-form {
+    margin-top: -220px; }
+  .login-form::after {
+    z-index: -1;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 120%;
+    height: 498px;
+    top: 72px;
+    left: 117px;
     -webkit-transform: rotate(42deg);
     -moz-transform: rotate(42deg);
     -ms-transform: rotate(42deg);
@@ -114,55 +150,29 @@ input {
     background: -o-linear-gradient(100deg, black, transparent);
     background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent); } }
 
-#home {
-  background-color: white;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  #home::before {
-    content: url(/img/login-icon.svg);
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    padding: 35px;
-    left: 50%;
-    top: -50px;
-    border-radius: 100px;
-    margin-left: -50px;
-    z-index: 1;
-    background-color: #ffd200; }
-  #home h1 {
-    padding: 45px 0 20px;
-    font-weight: lighter; }
-
-.btn-container {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto; }
-
-.home-btn {
-  background-color: #f5683d !important;
-  color: white !important;
-  box-shadow: 0px 4px 0 #f75523 !important; }
+#register-form a {
+  color: #f5683d;
+  display: inline-block;
+  padding: 10px 0 30px 0;
+  font-size: .95em; }
 
 @media screen and (min-width: 46.875em) {
-  #home::after {
+  #register-form {
+    margin-top: -240px; }
+  .register-form::after {
+    z-index: -1;
     content: '';
     display: block;
-    width: 26%;
-    height: 98px;
     position: absolute;
-    top: -25px;
-    left: 152px;
-    -webkit-transform: rotate(42deg);
-    -moz-transform: rotate(42deg);
-    -ms-transform: rotate(42deg);
-    -o-transform: rotate(42deg);
-    transform: rotate(42deg);
+    width: 120%;
+    height: 590px;
+    top: 64px;
+    left: 131px;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    transform: rotate(35deg);
     /*linear-gradient*/
     background: -webkit-gradient(linear, 60.06% 107.04%, 39.94% -7.04%, from(rgba(0, 0, 0, 0.2)), to(transparent));
     background: -webkit-linear-gradient(100deg, rgba(0, 0, 0, 0.2), transparent);

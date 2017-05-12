@@ -13,7 +13,7 @@
 
 .btn
   color: $font-color
-  background-color: $btn-color
+  background-color: $btn-color !important
   text-transform: uppercase
   letter-spacing: .02em
   box-shadow: 0px 4px 0 #3e82e1
@@ -24,18 +24,32 @@
   line-height: 38px
   margin: 25px 0
 
-@mixin centerer
+.home-btn
+  background-color: $second-font-color !important
+  color: white !important
+  box-shadow: 0px 4px 0 #f75523 !important
+
+@mixin VerticalCenter
   position: absolute
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
 
-@mixin shadow
-  -webkit-transform: rotate(42deg)
-  -moz-transform: rotate(42deg)
-  -ms-transform: rotate(42deg)
-  -o-transform: rotate(42deg)
-  transform: rotate(42deg)
+@mixin shadow($deg, $width, $height, $top, $left, $z-index)
+  @if($z-index)
+    z-index: -1
+  content: ''
+  display: block
+  position: absolute
+  width: $width
+  height: $height
+  top: $top
+  left: $left
+  -webkit-transform: rotate($deg)
+  -moz-transform: rotate($deg)
+  -ms-transform: rotate($deg)
+  -o-transform: rotate($deg)
+  transform: rotate($deg)
   /*linear-gradient*/
   background: -webkit-gradient(linear,60.06% 107.04%,39.94% -7.04%,from(rgba(0,0,0,.2)),to(rgba(0,0,0,0)))
   background: -webkit-linear-gradient(100deg,rgba(0,0,0,.2),rgba(0,0,0,0))
