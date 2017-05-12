@@ -19,7 +19,7 @@ export class Register extends React.Component {
         return(
 
             <div>
-                <form className='center-block'>
+                <form action='/register' method='post' className='center-block'>
                     <input type='text' placeholder={ username }/>
                     <input type='password' placeholder={ password }/>
                     <input type='password' placeholder={ passwordConfirm }/>

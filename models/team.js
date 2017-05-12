@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
-// === GENERATE each team model
 const TeamSchema = new Schema({
 
     name: {
@@ -17,7 +15,6 @@ const TeamSchema = new Schema({
         default: false
     }
 
-    // === ADD State
 });
 
 

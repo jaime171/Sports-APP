@@ -4789,7 +4789,7 @@ var Register = exports.Register = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     'form',
-                    { className: 'center-block' },
+                    { action: '/register', method: 'post', className: 'center-block' },
                     _react2.default.createElement('input', { type: 'text', placeholder: username }),
                     _react2.default.createElement('input', { type: 'password', placeholder: password }),
                     _react2.default.createElement('input', { type: 'password', placeholder: passwordConfirm }),

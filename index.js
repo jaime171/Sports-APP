@@ -13,20 +13,17 @@ const errorHandler = require('./errors/errors');
 const app = express();
 
 // === CONNECT to MONGODB
-// mongoose.connect('mongodb://localhost/teams');
-// mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/teams');
+mongoose.Promise = global.Promise;
 
 
 /* ====================
-Jade Template Engine Setup
+Pug Template Engine Setup
 ======================== */
 
 
 // === INITIALIZE pug engine
 app.set('view engine', 'pug');
-
-// === GET templates routes
-app.use('/', templateRouter);
 
 
 /* ====================
@@ -42,6 +39,9 @@ app.use(bodyParser.json());
 
 // === INITIALIZE API routes
 app.use('/api', apiRouter);
+
+// === INITIALIZE Session routes
+app.use('/', templateRouter);
 
 // === ERROR handling
 app.use(function (err, req, res, next){

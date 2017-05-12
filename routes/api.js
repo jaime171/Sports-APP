@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Team = require('../models/team');
 
-var mongoose = require('mongoose');
-
-
 // === GET the list from DB
 router.get('/sports', function(req, res, next){
     
@@ -65,6 +62,5 @@ router.put('/sports/:id', function(req, res, next){
         });
 
 });
-
 
 module.exports = router;
