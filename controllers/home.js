@@ -1,3 +1,14 @@
-/**
- * Created by jimmy on 11/05/2017.
- */
+
+var Model = {
+    Title: 'Dashboard'
+}
+
+module.exports = {
+
+    index(req, res, next) {
+
+        res.render('index', Model);
+
+    }
+
+};

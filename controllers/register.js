@@ -1,3 +1,10 @@
-/**
- * Created by jimmy on 12/05/2017.
- */
+
+module.exports = {
+
+    index(req, res, next) {
+
+        res.render('session/register');
+
+    }
+
+};

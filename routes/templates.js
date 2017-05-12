@@ -1,31 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
-var Model = {
-    Title: 'Dashboard',
-    Message: 'API Dashboard'
-};
-
-// === Set PUG Routes
-router.get('/', function (req, res) {
-
-    res.render('index', Model);
-
-});
+const controllers = require('../controllers/index');
 
 
-router.get('/login', function (req, res) {
+console.log(controllers);
 
-    res.render('session/login');
+// === Set Controllers Routes
+router.get('/', controllers.home.index);
 
-});
+router.get('/login', controllers.login.index);
 
-
-router.get('/register', function (req, res) {
-
-    res.render('session/register');
-
-});
+router.get('/register', controllers.register.index);
 
 
 module.exports = router;
