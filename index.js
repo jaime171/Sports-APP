@@ -13,8 +13,8 @@ const errorHandler = require('./errors/errors');
 const app = express();
 
 // === CONNECT to MONGODB
-mongoose.connect('mongodb://localhost/teams');
-mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://localhost/teams');
+// mongoose.Promise = global.Promise;
 
 
 /* ====================
@@ -52,7 +52,7 @@ app.use(function (err, req, res, next){
 
 
 /* ====================
- Server
+         Server
  ======================== */
 
 

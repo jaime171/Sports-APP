@@ -16,14 +16,14 @@ router.get('/', function (req, res) {
 
 router.get('/login', function (req, res) {
 
-    res.render('session/login', Model);
+    res.render('session/login');
 
 });
 
 
 router.get('/signup', function (req, res) {
 
-    res.render('session/signup', Model);
+    res.render('session/signup');
 
 });
 

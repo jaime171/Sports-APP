@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        path.resolve(__dirname, 'components') + '/session/login'
+        path.resolve(__dirname, 'scripts') + '/index'
     ],
     output: {
         path: path.resolve(__dirname, 'public') + '/scripts',
@@ -13,7 +13,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js[x]?$/,
-                include: path.resolve(__dirname, 'components'),
+                include: path.resolve(__dirname, 'scripts'),
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
