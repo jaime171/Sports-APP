@@ -1,6 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+// === Flash Messages
+const flash = require('connect-flash');
 
 // === Routers
 const templateRouter = require('./routes/templates');
@@ -30,6 +35,16 @@ app.set('view engine', 'pug');
        Middlewares
  ======================== */
 
+// === Session
+app.use(cookieParser());
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+}));
+
+// === Flash Messages
+app.use(flash());
 
 // === SET public files
 app.use(express.static('public'));

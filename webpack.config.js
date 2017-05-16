@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
@@ -23,6 +24,19 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        extensions: ['.js'],
+        alias: {
+            'AppUrls': path.resolve(__dirname, 'scripts') + '/appUrls'
+        }
+    },
+    plugins: [
+
+        new webpack.ProvidePlugin({
+            'AppUrls': 'AppUrls'
+        })
+
+    ],
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM'

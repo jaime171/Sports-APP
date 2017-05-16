@@ -1,13 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom'
-
+import { BrowserRouter, Route } from 'react-router-dom';
 
 // === Import components
 import { HomeModule } from './components/home/index';
 import { LogInModule } from './components/login/index';
 import { RegisterModule } from './components/register/index';
-
 
 class App extends React.Component {
 
@@ -29,7 +27,7 @@ class App extends React.Component {
 
 }
 
-render(<App />, document.getElementById('wrapper'));
+render(<App />, document.getElementById('main-container'));
 
 
 

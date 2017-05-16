@@ -28,6 +28,11 @@
   color: white !important;
   box-shadow: 0px 4px 0 #f75523 !important; }
 
+.error {
+  color: red;
+  padding: 0 0 20px;
+  display: inline-block; }
+
 .session-module {
   background-color: white;
   width: 100%;
@@ -35,6 +40,7 @@
   border-radius: 5px;
   position: relative;
   top: 120px;
+  padding-bottom: 10px;
   font-family: "Open Sans", sans-serif; }
   .session-module h2 {
     padding: 50px 0 0 0;
@@ -105,9 +111,9 @@
     display: block;
     position: absolute;
     width: 120%;
-    height: 429px;
-    top: 79px;
-    left: 92px;
+    height: 433px;
+    top: 80px;
+    left: 91px;
     -webkit-transform: rotate(52deg);
     -moz-transform: rotate(52deg);
     -ms-transform: rotate(52deg);

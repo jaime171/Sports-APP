@@ -1,9 +1,19 @@
 
+
+
 module.exports = {
 
     index(req, res, next) {
 
-        res.render('session/login');
+        var Model = {
+
+            message: req.flash('correctLogin')
+
+        }
+
+        console.log(Model.message.length);
+
+        res.render('session/login', Model);
 
     }
 

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const SessionSchema = new Schema({
+const UserSchema = new Schema({
 
-    name: {
+    username: {
         type: String,
         required: [true, 'Name field is required']
     },
@@ -22,5 +22,4 @@ const SessionSchema = new Schema({
 
 });
 
-
-module.exports = mongoose.model('user', SessionSchema);
+module.exports = mongoose.model('user', UserSchema);

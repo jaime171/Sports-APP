@@ -3,6 +3,9 @@ const router = express.Router();
 const User = require('../models/user');
 
 const controllers = require('../controllers/index');
+//
+// // === API urls
+// import Paths from './paths';
 
 // === Set Controllers Routes
 router.get('/', controllers.home.index);

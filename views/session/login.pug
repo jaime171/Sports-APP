@@ -1,9 +1,13 @@
 extends ../layout
 
 block content
-    body
-        .wrapper#wrapper
-            //#title
+    .wrapper#wrapper
+
+        if message.length > 0
+            #alert-messages
+                p= message
+
+        .container#main-container
             section(id='login-container' class='center-block')
 
 
