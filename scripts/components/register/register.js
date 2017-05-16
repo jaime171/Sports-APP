@@ -9,7 +9,7 @@ export class Register extends React.Component {
 
         super();
         this.state = {
-            showError: false ,
+            showError: false,
             showPasswordError: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ export class Register extends React.Component {
                     <input type='password' placeholder='Password Confirm' ref='passwordConfirm'/>
                     <input type='email' placeholder='Email' ref='email'/>
                     { this.state.showError && <span className='error'><small>Please fill all fields </small></span> }
-                    { this.state.showPasswordError && <span className='error'><small>Passwords are not the same </small></span> }
+                    { this.state.showPasswordError && <span className='error'><small>Password are not the same </small></span> }
                     <input onClick={ this.handleSubmit } className='pointer btn' type='submit' value='submit'/>
                 </form>
             </div>
@@ -40,7 +40,6 @@ export class Register extends React.Component {
     onInputChange() {
 
         this.setState({ showError: false });
-        this.setState({ showPasswordError: false });
 
     }
 
@@ -55,44 +54,35 @@ export class Register extends React.Component {
 
         let user = { username, password, passwordConfirm, email };
 
-        for(let key in user) {
+        let validator = Helpers.validateFields(user);
 
-            if(user.hasOwnProperty(key)) {
+        // === Set State for error messages
+        this.setState({ showError: !validator });
 
-                if(user[key] == null || user[key].trim() === '') {
+        if( validator ) {
 
-                    this.setState({ showError: true });
-                    return;
+            if(password === passwordConfirm) {
 
-                }
+                // === If all inputs are validated then we make the API call
+                axios.post(AppUrls.registerUser(), user)
+
+                    .then(function (response) {
+
+                        if(response.data){
+
+                            window.location = '/login';
+
+                        }
+
+                    });
+
+            } else {
+
+                this.setState({ showPasswordError: true });
 
             }
 
         }
-
-        if(password === passwordConfirm) {
-
-            // === If all inputs are validated then we make the API call
-            axios.post(AppUrls.registerUser(), user)
-
-                .then(function (response) {
-
-                    if(response.data){
-
-                        window.location = '/login';
-
-                    }
-
-                });
-
-        } else {
-
-            this.setState({ showPasswordError: true });
-
-        }
-
-
-
 
     }
 

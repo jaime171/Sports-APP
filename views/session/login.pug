@@ -3,9 +3,13 @@ extends ../layout
 block content
     .wrapper#wrapper
 
-        if message.length > 0
-            #alert-messages
+        #alert-messages
+
+            if message.length > 0
                 p= message
+
+
+            p= userNotFound
 
         .container#main-container
             section(id='login-container' class='center-block')

@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+
+// === Initialize passport auth controller
+require('./controllers/index').login.postUser(passport);
 
 // === Flash Messages
 const flash = require('connect-flash');
@@ -18,7 +22,7 @@ const errorHandler = require('./errors/errors');
 const app = express();
 
 // === CONNECT to MONGODB
-mongoose.connect('mongodb://localhost/teams');
+mongoose.connect('mongodb://localhost/dashboard');
 mongoose.Promise = global.Promise;
 
 
@@ -35,13 +39,17 @@ app.set('view engine', 'pug');
        Middlewares
  ======================== */
 
-// === Session
+// === Session ( Register User )
 app.use(cookieParser());
 app.use(session({
     secret: 'secret',
     resave: false,
     saveUninitialized: false
 }));
+
+// === Passport ( Session Handler )
+app.use(passport.initialize());
+app.use(passport.session());
 
 // === Flash Messages
 app.use(flash());

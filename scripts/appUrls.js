@@ -1,6 +1,7 @@
 
 module.exports = {
 
-    registerUser() { return './register' }
+    registerUser() { return './register' },
+    loginUser() { return './login' }
 
 };

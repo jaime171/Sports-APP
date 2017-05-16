@@ -27,13 +27,15 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            'AppUrls': path.resolve(__dirname, 'scripts') + '/appUrls'
+            'AppUrls': path.resolve(__dirname, 'scripts') + '/appUrls',
+            'Helpers': path.resolve(__dirname, 'scripts') + '/helpers'
         }
     },
     plugins: [
 
         new webpack.ProvidePlugin({
-            'AppUrls': 'AppUrls'
+            'AppUrls': 'AppUrls',
+            'Helpers': 'Helpers'
         })
 
     ],
